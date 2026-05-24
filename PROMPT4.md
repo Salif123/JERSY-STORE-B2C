@@ -84,12 +84,18 @@ This documentation tracks the features, database architectures, styling guidelin
   * Developed a GET API handler validating 6-digit PIN codes.
   * Simulates undeliverable zones (prefix starting with `9`).
   * Maps prefixes to delivery estimations, resolving `682016` (and prefix `6`) to the specified `3-5` days delivery range.
-* **Product Details Accordion**: Created collapsible accordion panels for **Description**, **Size Guide** (detailed measurements table), and **Shipping & Returns** policies.
-* **Related Products recommendations**: Fetches 4 active related products belonging to the same category server-side, backfilling from other categories if required, and rendering them as sportswear cards.
-* **Zustand Flat Cart Refactoring (`lib/cart.ts`)**:
-  * Migrated the Zustand cart store to a flat `CartItem` schema: `{ product_id, name, slug, image, size, price, quantity }`.
-  * Preserved the original nested `product?: Product` field as optional to prevent crashes when processing old orders stored in database history.
-  * Refactored storefront and admin layers (`CartItem.tsx`, `Header.tsx`, `/cart`, `/checkout`, `/api/payment/create-order`, `/api/payment/verify`, `OrderTable.tsx`, and `/order-success`) to adapt to flat field reading.
+- **Product Details Accordion**: Created collapsible accordion panels for **Description**, **Size Guide** (detailed measurements table), and **Shipping & Returns** policies.
+- **Related Products recommendations**: Fetches 4 active related products belonging to the same category server-side, backfilling from other categories if required, and rendering them as sportswear cards.
+- **Zustand Flat Cart Refactoring (`lib/cart.ts`)**:
+  - Migrated the Zustand cart store to a flat `CartItem` schema: `{ product_id, name, slug, image, size, price, quantity }`.
+  - Preserved the original nested `product?: Product` field as optional to prevent crashes when processing old orders stored in database history.
+  - Refactored storefront and admin layers (`CartItem.tsx`, `Header.tsx`, `/cart`, `/checkout`, `/api/payment/create-order`, `/api/payment/verify`, `OrderTable.tsx`, and `/order-success`) to adapt to flat field reading.
+- **Premium Clubs Showcase Upgrade**:
+  - **Infinite Marquee**: Built an hardware-accelerated logo marquee showcasing brands (Nike, Adidas, Puma) and leagues (NBA, Premier League, IPL, La Liga) that pauses on cursor hover.
+  - **3D Tilt Interaction**: Implemented custom trigonometry coordinates hooks to tilt club cards dynamically relative to cursor hover alignment.
+  - **Accent Team Glows**: Renders color shadow boundaries matching team colors (Lakers Purple, CSK Gold, United Red, MI Cobalt, Real Madrid Gold) and radial spotlight coordinates.
+  - **Expandable Tagline CTAs**: Smooth CSS height expansions revealing team taglines and action links on hover.
+  - **Swipe carousel**: Integrated draggable snap-scroll carousels with dot selectors for swipable mobile usage.
 
 ---
 
