@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { supabaseServer } from '@/lib/supabase';
 import { ProductCard } from '@/components/store/ProductCard';
 import { HomeInteractive } from '@/components/store/HomeInteractive';
+import { ClubsShowcase } from '@/components/store/ClubsShowcase';
 import { Product } from '@/types';
 import { Truck, RotateCcw, CreditCard, ShieldCheck, ArrowRight, Star } from 'lucide-react';
 import { clsx } from 'clsx';
@@ -220,7 +221,10 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         )}
       </section>
 
-      {/* 4. Client-side Interactive Metrics and Testimonials */}
+      {/* 4. Premium Clubs & Franchises Showcase */}
+      <ClubsShowcase />
+
+      {/* 5. Client-side Interactive Metrics and Testimonials */}
       <HomeInteractive />
 
     </div>
